@@ -1,0 +1,25 @@
+SLIP GAJI PDF — FILE MEREK PERUSAHAAN
+=====================================
+
+Letakkan file di folder ini (assets/pdf/), lalu beri tahu Claude untuk
+finalisasi. Semua OPSIONAL — yang belum ada otomatis dilewati (fallback),
+jadi slip PDF tetap jalan meski folder ini masih kosong.
+
+FILE GAMBAR (nama harus PERSIS, huruf kecil):
+  logo.png       Logo perusahaan. PNG LATAR TRANSPARAN, resolusi tinggi
+                 (min ~500 px sisi terpanjang). Tampil di kop atas slip.
+  signature.png  Gambar tanda tangan. PNG LATAR TRANSPARAN (scan tanda
+                 tangan di kertas putih lalu crop rapi). Tampil di blok
+                 "Mengetahui" di bawah slip.
+  stamp.png      (opsional) Stempel/cap perusahaan. PNG LATAR TRANSPARAN.
+
+TEKS (kirim ke Claude, boleh sebagian):
+  - Nama badan hukum lengkap        (mis. PT Sungai Berlian Mahakam)
+  - Alamat kantor                   (untuk baris kop)
+  - Telepon / email / website       (opsional)
+  - NPWP perusahaan / No. BPJS       (opsional, untuk kop)
+  - Nama & jabatan penanda tangan    (mis. "Andi Prasetyo — Manajer HRD")
+  - Warna brand (hex) bila bukan     (default hijau #059669)
+    hijau
+
+Tips: logo & tanda tangan sebaiknya PNG transparan agar menyatu mulus di PDF.
