@@ -1,11 +1,11 @@
 {
-    "name": "siabsen_mobile",
-    "short_name": "siabsen_mobile",
+    "name": "CoalTrack — SAB",
+    "short_name": "CoalTrack",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFFFF",
+    "theme_color": "#F28C1E",
+    "description": "CoalTrack — aplikasi absensi & HR PT Surya Alam Bakti.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

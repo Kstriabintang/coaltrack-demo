@@ -1,46 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
+    Placeholder base href — diganti oleh `flutter build web --base-href ...`.
+    JANGAN hard-code path di sini.
   -->
   <base href="/coaltrack-demo/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="CoalTrack demo interaktif — layar aplikasi absensi tambang, 7 bahasa.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="CoalTrack — aplikasi absensi & HR PT Surya Alam Bakti (demo web).">
+  <meta name="theme-color" content="#F28C1E">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="CoalTrack">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>CoalTrack Demo</title>
+  <title>CoalTrack — PT Surya Alam Bakti</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { height: 100%; margin: 0; background: #FFFFFF; }
+    /* Loader ringan selama main.dart.js diunduh (terasa di jaringan HP). */
+    #ct-loading {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      background: #FFFFFF; color: #1E3F8F;
+      font: 600 15px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: .2px;
+    }
+    #ct-loading .ring {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 3px solid rgba(242, 140, 30, .22); border-top-color: #F28C1E;
+      animation: ct-spin .9s linear infinite;
+    }
+    @keyframes ct-spin { to { transform: rotate(360deg); } }
+    @media (prefers-color-scheme: dark) {
+      html, body, #ct-loading { background: #0B1512; }
+      #ct-loading { color: #E5A03A; }
+    }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <div id="ct-loading" aria-live="polite">
+    <div class="ring"></div>
+    <div>CoalTrack</div>
+  </div>
+  <script>
+    // Flutter mengirim event ini setelah frame pertama dirender.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('ct-loading');
+      if (el) el.remove();
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
