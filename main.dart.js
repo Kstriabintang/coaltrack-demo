@@ -138142,7 +138142,7 @@ $2(a,b){return new A.b1(A.k(a),b,t.YM)},
 $S:274}
 A.bee.prototype={
 $1(a){var s=A.bmT(A.blX("",B.kA,B.kA,B.kA))
-return new A.uA(s,"https://api.ksatriabintangsamudra.my.id/send-payslip")},
+return new A.uA(s,"https://api.coaltrack.id/send-payslip")},
 $S:765}
 A.y3.prototype={
 fh(){return""}}
