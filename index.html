@@ -11,7 +11,7 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="CoalTrack — aplikasi absensi & HR PT Surya Alam Bakti (demo web).">
-  <meta name="theme-color" content="#F28C1E">
+  <meta name="theme-color" content="#0B1220">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -27,24 +27,26 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
-    html, body { height: 100%; margin: 0; background: #FFFFFF; }
+    /* Dark-first: latar navy dalam agar first paint tidak berkedip putih. */
+    html, body { height: 100%; margin: 0; background: #0B1220; }
     /* Loader ringan selama main.dart.js diunduh (terasa di jaringan HP). */
     #ct-loading {
       position: fixed; inset: 0; display: flex; flex-direction: column;
       align-items: center; justify-content: center; gap: 14px;
-      background: #FFFFFF; color: #1E3F8F;
-      font: 600 15px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      letter-spacing: .2px;
+      background: #0B1220; color: #F5A524;
+      font: 700 15px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: .3px;
     }
     #ct-loading .ring {
       width: 34px; height: 34px; border-radius: 50%;
-      border: 3px solid rgba(242, 140, 30, .22); border-top-color: #F28C1E;
+      border: 3px solid rgba(245, 165, 36, .22); border-top-color: #F5A524;
       animation: ct-spin .9s linear infinite;
     }
     @keyframes ct-spin { to { transform: rotate(360deg); } }
-    @media (prefers-color-scheme: dark) {
-      html, body, #ct-loading { background: #0B1512; }
-      #ct-loading { color: #E5A03A; }
+    @media (prefers-color-scheme: light) {
+      /* Tetap gelap saat memuat — merek CoalTrack dark-first. */
+      html, body, #ct-loading { background: #0B1220; }
+      #ct-loading { color: #F5A524; }
     }
   </style>
 </head>
